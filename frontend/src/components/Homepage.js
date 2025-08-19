@@ -83,6 +83,15 @@ const Homepage = () => {
                 <MessageCircle className="w-5 h-5 ml-2" />
                 {mockData.hero.secondaryCta}
               </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="cta-additional text-lg px-8 py-4"
+                onClick={handleContactClick}
+              >
+                <Clock className="w-5 h-5 ml-2" />
+                {mockData.hero.additionalCta}
+              </Button>
             </div>
           </div>
         </div>
