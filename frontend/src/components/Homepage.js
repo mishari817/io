@@ -114,7 +114,15 @@ const Homepage = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">{point}</p>
+                  <p className="text-gray-700 mb-4">{point}</p>
+                  <Button 
+                    className="cta-card w-full"
+                    onClick={handleContactClick}
+                    size="sm"
+                  >
+                    <Phone className="w-4 h-4 ml-2" />
+                    تواصل معنا
+                  </Button>
                 </CardContent>
               </Card>
             ))}
