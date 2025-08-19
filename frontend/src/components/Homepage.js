@@ -38,7 +38,7 @@ const Homepage = () => {
       <header className="header">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="logo">
-            <h1 className="text-2xl font-bold text-orange-600">مؤسسة المالكي</h1>
+            <h1 className="text-2xl font-bold text-orange-600">المالكي</h1>
             <p className="text-sm text-gray-600">حماية السيارات الاحترافية</p>
           </div>
           <div className="header-contact">
