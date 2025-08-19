@@ -313,9 +313,28 @@ const Homepage = () => {
             </div>
           </div>
           <div className="footer-bottom mt-8 pt-8 border-t border-gray-200 text-center">
-            <p className="text-gray-600">
-              © 2024 مؤسسة المالكي - جميع الحقوق محفوظة
+            <p className="text-gray-600 mb-4">
+              © 2024 المالكي - جميع الحقوق محفوظة
             </p>
+            <div className="footer-cta-buttons flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                className="cta-footer-final"
+                onClick={handleContactClick}
+                size="lg"
+              >
+                <Sparkles className="w-5 h-5 ml-2" />
+                احجز خدمتك الآن
+              </Button>
+              <Button 
+                variant="outline"
+                className="cta-footer-whatsapp"
+                onClick={handleWhatsAppClick}
+                size="lg"
+              >
+                <MessageCircle className="w-5 h-5 ml-2" />
+                راسلنا واتساب
+              </Button>
+            </div>
           </div>
         </div>
       </footer>
