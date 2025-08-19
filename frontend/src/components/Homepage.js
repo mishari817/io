@@ -188,15 +188,34 @@ const Homepage = () => {
             <h2 className="offer-title text-4xl font-bold mb-8">
               {mockData.offer.title}
             </h2>
-            <Button 
-              size="lg" 
-              className="cta-primary text-xl px-10 py-6"
-              onClick={handleContactClick}
-              disabled={isSubmitting}
-            >
-              <Sparkles className="w-6 h-6 ml-2" />
-              {isSubmitting ? "جاري الإرسال..." : mockData.offer.cta}
-            </Button>
+            <div className="offer-buttons flex flex-col md:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="cta-primary text-xl px-10 py-6"
+                onClick={handleContactClick}
+                disabled={isSubmitting}
+              >
+                <Sparkles className="w-6 h-6 ml-2" />
+                {isSubmitting ? "جاري الإرسال..." : mockData.offer.cta}
+              </Button>
+              <Button 
+                variant="outline"
+                size="lg" 
+                className="cta-offer-secondary text-xl px-10 py-6"
+                onClick={handleContactClick}
+              >
+                <DollarSign className="w-6 h-6 ml-2" />
+                {mockData.offer.secondaryCta}
+              </Button>
+              <Button 
+                size="lg" 
+                className="cta-urgent text-xl px-10 py-6"
+                onClick={handleContactClick}
+              >
+                <Phone className="w-6 h-6 ml-2" />
+                {mockData.offer.urgentCta}
+              </Button>
+            </div>
           </div>
         </div>
       </section>
