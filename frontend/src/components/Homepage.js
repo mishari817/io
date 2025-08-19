@@ -275,10 +275,17 @@ const Homepage = () => {
         <div className="container mx-auto px-4">
           <div className="footer-content grid md:grid-cols-3 gap-8">
             <div className="footer-section">
-              <h3 className="footer-title text-xl font-bold mb-4">مؤسسة المالكي</h3>
-              <p className="text-gray-600">
+              <h3 className="footer-title text-xl font-bold mb-4">المالكي</h3>
+              <p className="text-gray-600 mb-4">
                 أفضل خدمات حماية السيارات في جدة
               </p>
+              <Button 
+                className="cta-footer mb-2"
+                onClick={handleContactClick}
+              >
+                <Phone className="w-4 h-4 ml-2" />
+                اتصل الآن
+              </Button>
             </div>
             <div className="footer-section">
               <h4 className="footer-subtitle font-semibold mb-4">خدماتنا الأخرى</h4>
