@@ -142,7 +142,15 @@ const Homepage = () => {
                 <div className="benefit-icon mb-4">
                   <CheckCircle className="w-8 h-8 text-orange-600 mx-auto" />
                 </div>
-                <p className="text-gray-700">{benefit}</p>
+                <p className="text-gray-700 mb-4">{benefit}</p>
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="cta-benefit"
+                  onClick={handleContactClick}
+                >
+                  احجز الآن
+                </Button>
               </div>
             ))}
           </div>
