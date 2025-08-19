@@ -1,34 +1,304 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Arabic RTL Support */
+body {
+  font-family: 'Segoe UI', 'Cairo', 'Noto Sans Arabic', sans-serif;
+  direction: rtl;
+  text-align: right;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.App {
+  min-height: 100vh;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
+/* Orange & White Theme */
+:root {
+  --primary-orange: #f97316;
+  --primary-orange-light: #fb923c;
+  --primary-orange-dark: #ea580c;
+  --accent-orange: #fed7aa;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background-primary: #ffffff;
+  --background-secondary: #f9fafb;
+}
+
+/* Header Styles */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  color: var(--text-primary);
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* CTA Buttons */
+.cta-primary {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-dark) 100%);
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  background: linear-gradient(135deg, var(--primary-orange-dark) 0%, #c2410c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+.cta-secondary {
+  border-color: var(--primary-orange);
+  color: var(--primary-orange);
+  background: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: var(--primary-orange);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Section Styles */
+.education-section,
+.benefits-section,
+.why-us-section,
+.faq-section,
+.blog-section {
+  background: var(--background-primary);
+}
+
+.education-section:nth-child(odd),
+.benefits-section:nth-child(odd),
+.why-us-section:nth-child(odd) {
+  background: var(--background-secondary);
+}
+
+.section-title {
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+}
+
+/* Card Styles */
+.education-card,
+.why-us-card,
+.blog-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.education-card:hover,
+.why-us-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-orange);
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Benefits Grid */
+.benefit-item {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: scale(1.05);
+}
+
+/* Offer Section */
+.offer-section {
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+  position: relative;
+}
+
+.offer-badge {
+  background: var(--primary-orange);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.offer-title {
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+/* FAQ Accordion Styles */
+[data-radix-accordion-item] {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+
+[data-radix-accordion-trigger] {
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 1rem 0;
+}
+
+[data-radix-accordion-trigger]:hover {
+  color: var(--primary-orange);
+}
+
+[data-radix-accordion-content] {
+  padding-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background: #111827;
+  color: white;
+}
+
+.footer-title {
+  color: var(--primary-orange);
+}
+
+.footer-subtitle {
+  color: #d1d5db;
+}
+
+.footer-services li {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.footer-services li:hover {
+  color: var(--primary-orange);
+}
+
+.contact-info .contact-item {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+}
+
+/* Fixed CTA */
+.fixed-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.cta-phone {
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-phone:hover {
+  background: var(--primary-orange-dark);
+  transform: scale(1.05);
+}
+
+.cta-whatsapp {
+  background: white;
+  color: var(--primary-orange);
+  border: 2px solid var(--primary-orange);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-whatsapp:hover {
+  background: var(--primary-orange);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .hero-buttons {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+  }
+  
+  .hero-buttons .cta-primary,
+  .hero-buttons .cta-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .fixed-cta {
+    left: 10px;
+    right: 10px;
+    transform: none;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
 }
